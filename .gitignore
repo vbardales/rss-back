@@ -1,0 +1,7 @@
+.idea/
+dist/
+node_modules/
+src/**/*.js
+tests/__coverage__/
+tests/**/*.js
+.DS_Store
