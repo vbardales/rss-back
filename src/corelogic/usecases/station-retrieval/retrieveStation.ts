@@ -1,18 +1,19 @@
 import { SourceGateway } from '../../gateways/sourceGateway.interface';
+import Station from '../../models/station';
+import ResultSet from '../../models/resultSet';
 
 export default async ({ sourceGateway }: {
   sourceGateway: SourceGateway,
 }, { name }: { name: string }) => {
   let res;
   try {
-    res = await sourceGateway.get(name);
-  } catch {
+    const parsedName = decodeURI(name).replace(/ /g, '+');
+    const result = await sourceGateway.get(parsedName);
+    res = new ResultSet(result);
+  } catch (err) {
+    console.error(`An error occurred while getting stations: ${err.message}`, err);
     throw new Error('An error happened on station retrieval');
   }
 
-  if (!res) {
-    throw new Error('No station found');
-  }
-
-  return res;
+  return res.records;
 };

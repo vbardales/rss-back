@@ -1,0 +1,49 @@
+{
+  "nhits":1,
+  "parameters":{
+    "dataset":"positions-geographiques-des-stations-du-reseau-ratp",
+    "timezone":"UTC",
+    "q":"noisiel rer",
+    "rows":1,
+    "format":"json",
+    "facet":[
+      "stop_name"
+    ]
+  },
+  "records":[
+    {
+      "datasetid":"positions-geographiques-des-stations-du-reseau-ratp",
+      "recordid":"fe1b6a234d77dadb9a9e8f689cf3c9f6ca4d9273",
+      "fields":{
+        "stop_coordinates":[
+          48.84379185295751,
+          2.616085209942924
+        ],
+        "stop_desc":"ALLEE JEAN-PAUL SARTRE - 77337",
+        "stop_name":"NOISIEL RER",
+        "stop_id":"3682675"
+      },
+      "geometry":{
+        "type":"Point",
+        "coordinates":[
+          2.616085209942924,
+          48.84379185295751
+        ]
+      },
+      "record_timestamp":"2019-03-22T10:43:58.103000+00:00"
+    }
+  ],
+  "facet_groups":[
+    {
+      "facets":[
+        {
+          "count":10,
+          "path":"NOISIEL RER",
+          "state":"refined",
+          "name":"NOISIEL RER"
+        }
+      ],
+      "name":"stop_name"
+    }
+  ]
+}

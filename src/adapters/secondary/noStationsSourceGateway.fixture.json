@@ -1,0 +1,14 @@
+{
+  "nhits":0,
+  "parameters":{
+    "dataset":"positions-geographiques-des-stations-du-reseau-ratp",
+    "timezone":"UTC",
+    "q":"tralata",
+    "rows":10,
+    "format":"json",
+    "facet":[
+      "stop_name"
+    ]
+  },
+  "records":[]
+}
