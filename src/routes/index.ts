@@ -1,7 +1,6 @@
 import Router from 'koa-router';
 
-import * as actions from '../actions';
-import retrieveStation from '../corelogic/usecases/station-retrieval/retrieveStation';
+import actions from '../actions';
 import {HttpSourceGateway} from '../adapters/secondary/HttpSourceGateway';
 
 const router = new Router();
