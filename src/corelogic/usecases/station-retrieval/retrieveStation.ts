@@ -1,5 +1,4 @@
 import { SourceGateway } from '../../gateways/sourceGateway.interface';
-import Station from '../../models/station';
 import ResultSet from '../../models/resultSet';
 
 export default async ({ sourceGateway }: {

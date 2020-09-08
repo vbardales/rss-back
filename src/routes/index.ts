@@ -10,7 +10,8 @@ const sourceGateway = new HttpSourceGateway('https://data.ratp.fr/api/records/1.
 router
   .post('/stations/find', async (ctx) => {
     try {
-      ctx.body = await actions.retrieveStation({ sourceGateway }, ctx.request.body.name);
+      const res = await actions.retrieveStation({ sourceGateway }, { name: ctx.request.body.name });
+      ctx.body = res;
     } catch (err) {
       ctx.body = err;
       ctx.status = 500;
