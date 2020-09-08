@@ -24,4 +24,13 @@ describe('Station retrieval', () => {
       description: 'abcdescription',
     });
   });
+
+  it('should handle technical error', async () => {
+    sourceGateway.technicalError();
+    await expect(actions.retrieveStation({ sourceGateway }, { name: 'abcname' })).rejects.toThrow('An error happened on station retrieval');
+  });
+
+  it('should retrieve nothing and reject if no station with the given name', async () => {
+    await expect(actions.retrieveStation({ sourceGateway }, { name: 'abcname' })).rejects.toThrow('No station found');
+  });
 });
