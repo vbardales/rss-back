@@ -16,7 +16,6 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@types/jest": "^23.3.13",
-    "@types/redux": "^3.6.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
@@ -25,10 +24,5 @@
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"
   },
-  "dependencies": {
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-observable": "^1.2.0",
-    "rxjs": "^6.6.3"
-  }
+  "dependencies": {}
 }

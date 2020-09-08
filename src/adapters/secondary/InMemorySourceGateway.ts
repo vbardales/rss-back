@@ -1,21 +1,15 @@
-import { Observable, ReplaySubject } from 'rxjs';
-
 import { SourceGateway } from '../../corelogic/gateways/sourceGateway.interface';
 import Station from '../../corelogic/models/station';
 
 export class InMemorySourceGateway implements SourceGateway {
   private _station: Station | undefined;
 
-  get(name: string): Observable<Station> {
-    const subject = new ReplaySubject<Station>();
-
+  async get(name: string): Promise<Station> {
     if (!this._station) {
-      subject.error('Technical error occurred during retrieval');
-    } else {
-      subject.next(this._station);
+      throw new Error('Technical error occurred during retrieval');
     }
 
-    return subject;
+    return Promise.resolve(this._station);
   }
 
   set station(station: any) {

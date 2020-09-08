@@ -1,5 +1,7 @@
 export default class Station {
-  constructor(private id: string) {
+  private id: string;
 
+  constructor(data: { id: string }) {
+    this.id = data.id;
   }
 }
