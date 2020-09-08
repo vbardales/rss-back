@@ -10,10 +10,18 @@ describe('Station retrieval', () => {
   });
 
   it('should retrieve a given station', async () => {
-    sourceGateway.station = { id: 'abc' };
-    const res = await actions.retrieveStation({ sourceGateway }, { name: 'abc' });
+    sourceGateway.station = {
+      id: 'abcid',
+      name: 'abcname',
+      gps: 'abcgps',
+      description: 'abcdescription',
+    };
+    const res = await actions.retrieveStation({ sourceGateway }, { name: 'abcname' });
     expect(res).toEqual({
-      id: 'abc',
+      id: 'abcid',
+      name: 'abcname',
+      gps: 'abcgps',
+      description: 'abcdescription',
     });
   });
 });
