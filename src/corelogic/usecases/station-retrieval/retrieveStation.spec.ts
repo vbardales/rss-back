@@ -41,6 +41,12 @@ describe('Station retrieval', () => {
     expect(sourceGateway.search).toMatch('VAL+DE+FONTENAY');
   });
 
+  it('should handle case', async () => {
+    sourceGateway.station = noStationsFixture;
+    await actions.retrieveStation({ sourceGateway }, { name: 'noisiel%20rer' });
+    expect(sourceGateway.search).toMatch('NOISIEL+RER');
+  });
+
   it('should retrieve multiple stations if multiple matches', async () => {
     sourceGateway.station = multiStationsFixture;
     const res = await actions.retrieveStation({ sourceGateway }, { name: 'VERDUN' });

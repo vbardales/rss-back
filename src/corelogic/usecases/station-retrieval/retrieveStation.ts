@@ -6,7 +6,7 @@ export default async ({ sourceGateway }: {
 }, { name }: { name: string }) => {
   let res;
   try {
-    const parsedName = decodeURI(name).replace(/ /g, '+');
+    const parsedName = decodeURI(name).replace(/ /g, '+').toUpperCase();
     const result = await sourceGateway.get(parsedName);
     res = new ResultSet(result);
   } catch (err) {
